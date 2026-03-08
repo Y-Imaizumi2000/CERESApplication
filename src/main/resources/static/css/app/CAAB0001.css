@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+.title {
+	height: 310px;
+	background-image: url(../image/access/bg-main.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #ffffff;
+	text-shadow: 1px 1px 10px #4b2c14;
+}
+
+.title h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.title p {
+	font-size: 14px;
+	margin-top: 15px;
+}
+
+.main h2 {
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 30px;
+}
+
+.main h2::after {
+	content: '';
+	display: block;
+	width: 36px;
+	height: 3px;
+	background-color: #000000;
+	margin-top: 20px;
+}
+
+.contact {
+	width: 930px;
+	max-width: 90%;
+	margin-top: 75px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-area {
+	background-color: #f8f8f8;
+	border: 1px solid #aaaaaa;
+	margin-top: 25px;
+	padding: 30px;
+	display: grid;
+	grid-template-columns: 120px 1fr;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px 20px;
+}
+
+.form-area dt {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	white-space: nowrap;
+	width: 140px;
+	margin-left: 120px;
+}
+
+.form-area dd {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-area dt .required::after {
+	content: '必須';
+	font-size: 11px;
+	color: #eb4f32;
+	margin-left: 1px;
+}
+
+.input-text {
+	width: 100%;
+	max-width: 280px;
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.submit-button {
+	background-color: #f4dd64;
+	display: block;
+	margin: 20px auto 0;
+	min-width: 180px;
+	line-height: 48px;
+	border-radius: 24px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	text-align: center;
+	margin-top: 20px;
+	cursor: pointer;
+	border: none;
+}
+
+.submit-button:hover {
+	background-color: #d8b500;
+}
+
+.footer {
+	margin-top: 100px;
+	padding: 10px 0;
+}
+
+@media (max-width: 800px) {
+
+	.form-area dt,
+	.form-area dd {
+		width: 100%;
+	}
+
+	.form-area dt {
+		padding-bottom: 0;
+	}
+
+	.submit-button {
+		width: 100%;
+	}
+}

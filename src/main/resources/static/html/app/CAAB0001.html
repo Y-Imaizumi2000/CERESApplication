@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>ユーザー登録画面</title>
+	<meta name="description" content="専用WEBサイトを閲覧するためのログインユーザーを登録する画面">
+	<meta name="viewport" content="width=device-width">
+	<link href="../../css/common.css" rel="stylesheet">
+	<link href="../../css/app/CAAB0001.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<!-- headerここから -->
+	<header class="header">
+		<div class="header-inner">
+			<img class="header-logo" src="../../image/common/logo-header-kasumin'sCafe.png" alt="KASUMI">
+		</div>
+	</header>
+	<!-- headerここまで -->
+	<!-- mainここから -->
+	<main class="main">
+		<div class="contact">
+			<h2>ユーザー登録</h2>
+			<form id="regUser">
+				<div id="errorMessage" style="color:red; margin-top:5px;"></div>
+				<dl class="form-area">
+				<dt><span class="required">氏名</span></dt>
+				<dd><input class="input-text" type="text" name="name" maxlength="25" placeholder="山田　太郎" required></dd>
+				<dt><span class="required">生年月日</span></dt>
+				<dd><input class="input-text" type="number" name="dob" min="19000101" max="99991231" placeholder="YYYYMMDD" required></dd>
+				<dt><span class="required">電話番号（ハイフンなし）</span></dt>
+				<dd><input class="input-text" type="tel" name="telNo" maxlength="11"  pattern="\d{10,11}" placeholder="09012345678" required></dd>
+				<dt><span class="required">パスワード</span></dt>
+				<dd><input class="input-text" type="password" name="pass" minlength="8" required></dd>
+				<dt><span class="required">確認用パスワード</span></dt>
+				<dd><input class="input-text" type="password" name="confirmPass" minlength="8" required></dd>
+				</dl>
+				<button class="submit-button" type="submit">登録</button>
+			</form>
+		</div>
+	</main>
+	<!-- mainここまで -->
+
+	<!-- footerここから -->
+	<footer class="footer">
+		<img class="footer-logo" src="../../image/common/logo-footer-kasumin'sCafe.png" alt="KASUMI">
+		<p class="footer-tel">TEL：　 ひ　み　つ　♡</p>
+		<p class="footer-time">OPEN Fri-Sun 20:00-24:00</p>
+		<p class="copyright"><small>&copy;Kasumi</small></p>
+	</footer>
+	<!-- footerここまで --> 
+
+	<!-- javaScriptの定義 -->
+	<script src="../../js/app/CAAB0001.js"></script>
+</body>
+
+</html>
