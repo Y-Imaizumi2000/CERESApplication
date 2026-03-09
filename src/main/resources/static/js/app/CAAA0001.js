@@ -54,7 +54,7 @@ function validatePassword(pass, errors) {
 // サーバー通信
 // ---------------------------------------------
 function sendLoginRequest(id, pass) {
-    fetch("http://localhost:8081/validLoginUser", {
+    fetch("validLoginUser", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id, pass })
