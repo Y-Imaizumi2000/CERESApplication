@@ -33,20 +33,24 @@ public class UserServiceImpl implements UserService{
  */
 	@Override
 	public boolean validLoginUser(Integer loginUserId, String pass, String loginDate) {
-		logger.debug("■■■　validLoginUser　開始　■■■");
+		logger.info("■■■　validLoginUser　開始　■■■");
 		//ログインユーザー登録有無フラグの初期化
 		boolean loginUserRegUmFlg = false;
 
+		logger.info("■■■　mUserMapper.getUser　開始　■■■");
 		MUser response = mUserMapper.getUser(loginUserId);
+		logger.info("■■■　mUserMapper.getUser　終了　■■■");
 		if (response != null) {
-			logger.debug("ログインユーザーが存在しました。");
-			loginUserRegUmFlg = true;
+			if(pass.equals(response.getUserPass())) {
+				logger.info("ログインユーザーが存在しました。");
+				loginUserRegUmFlg = true;
+			} else {
+				logger.info("ログインユーザーが存在しませんでした。");
+			}
 		} else {
-			logger.debug("ログインユーザーが存在しませんでした。");
+			logger.info("ログインユーザーが存在しませんでした。");
 		}
-		
-
-		logger.debug("■■■　validLoginUser　終了　■■■");
+		logger.info("■■■　validLoginUser　終了　■■■");
 		//ログインユーザー登録有無フラグを返却
 		return loginUserRegUmFlg;
 		
@@ -54,7 +58,9 @@ public class UserServiceImpl implements UserService{
 
 @Override
 public int RegUserInfo(MUser mUser) {
+	logger.info("■■■　mUserMapper.createUser　開始　■■■");
 	int userId = mUserMapper.createUser(mUser);
+	logger.info("■■■　mUserMapper.createUser　終了　■■■");
 	return userId;
 }
 }	

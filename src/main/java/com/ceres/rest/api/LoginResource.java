@@ -31,8 +31,8 @@ import com.ceres.service.UserService;
 
 	@PostMapping("/validLoginUser")
 	public Map<String, Boolean> loginValidLoginUser(@RequestBody Map<String, Object> data) {
-		logger.debug("■■■　loginValidLoginUser　開始　■■■");
-		logger.debug("param:"+ data);
+		logger.info("■■■　loginValidLoginUser　開始　■■■");
+		logger.info("param:"+ data);
 		
 		String strId = (String)data.get("id");
 		Integer id = Integer.valueOf(strId);
@@ -41,8 +41,10 @@ import com.ceres.service.UserService;
         String sysDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
 		
 		//ログインユーザーの有効チェックを行う。
+		logger.info("■■■　userService.validLoginUser　開始　■■■");
 		boolean validFlg = userService.validLoginUser(id, pass, sysDate);
-		logger.debug("■■■　loginValidLoginUser　終了　■■■");
+		logger.info("■■■　userService.validLoginUser　終了　■■■");
+		logger.info("■■■　loginValidLoginUser　終了　■■■");
 		return Map.of("success", true,"validFlg", validFlg);
 		
 	}

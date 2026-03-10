@@ -30,8 +30,8 @@ import com.ceres.service.UserService;
 
 	@PostMapping("/regUserInfo")
 	public Map<String, Object> regUserInfo(@RequestBody Map<String, Object> data) {
-		logger.debug("■■■　regUserInfo　開始　■■■");
-		logger.debug("リクエスト:"+ data);
+		logger.info("■■■　regUserInfo　開始　■■■");
+		logger.info("リクエスト:"+ data);
 		
 		
 		String name = (String) data.get("name");
@@ -43,11 +43,13 @@ import com.ceres.service.UserService;
 		mUser.setUserDob(dob);
 		mUser.setUserTelNo(telNo);
 		mUser.setUserPass(pass);
-		
+
+		logger.info("■■■　userService.RegUserInfo　開始　■■■");
 		//ユーザー情報の登録を行う。
 		int userId = userService.RegUserInfo(mUser);
-		logger.debug("レスポンス:"+ userId);
-		logger.debug("■■■　regUserInfo　終了　■■■");
+		logger.info("■■■　userService.RegUserInfo　終了　■■■");
+		logger.info("レスポンス:"+ userId);
+		logger.info("■■■　regUserInfo　終了　■■■");
 		return Map.of("success", true,"userId", userId);
 	}
 }

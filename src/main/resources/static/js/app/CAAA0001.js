@@ -54,7 +54,7 @@ function validatePassword(pass, errors) {
 // サーバー通信
 // ---------------------------------------------
 function sendLoginRequest(id, pass) {
-    fetch("validLoginUser", {
+    fetch("/validLoginUser", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id, pass })
@@ -68,7 +68,10 @@ function sendLoginRequest(id, pass) {
 
             if (!result.validFlg) {
                 console.log("ログイン失敗");
+				const errors = [];
                 errors.push("ユーザーが存在しませんでした。");
+				displayErrors(errors);
+				return;
             } else {
                 console.log("ログイン成功");
                 location.href = "/html/app/CAAD0001.html";
