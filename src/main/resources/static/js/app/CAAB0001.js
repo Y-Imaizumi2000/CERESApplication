@@ -81,6 +81,7 @@ function clearErrorArea() {
 }
 
 function displayErrors(errors) {
+	if (!errors) return;
     const errorArea = document.getElementById("errorMessage");
     const ul = document.createElement("ul");
 
