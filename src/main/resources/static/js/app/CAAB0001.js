@@ -32,7 +32,7 @@ function handleSubmit(e) {
     }
 
     // --- ユーザー情報の登録） ---
-    regUserInfo(name, dob, telNo, pass, confirmPass);
+    regUserInfo(name, dob, telNo, pass);
 }
 
 
@@ -49,25 +49,25 @@ function checkValid(name, pass, confirmPass, errors) {
 // ---------------------------------------------
 // サーバー通信
 // ---------------------------------------------
-function regUserInfo(name, dob, telNo, pass, confirmPass) {
-    fetch("http://localhost:8081/regUserInfo", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, dob, telNo, pass , confirmPass})
+function regUserInfo(name, dob, telNo, pass) {
+	ApiClient.post("/regUserInfo", {
+        name,
+        dob,
+        telNo,
+        pass
     })
-    .then(res => res.json())
     .then(result => {
+
         if (!result.success) {
             displayErrors(result.errors);
             return;
         }
 
         console.log("登録成功");
-		alert("登録が完了しました。お客さまのユーザーIDは「" + result.userId + "」です。\r\n忘れずに保存してください！");
-        location.href = "/html/app/CAAA0001.html";
+        alert("登録が完了しました。お客さまのユーザーIDは「" + result.userId + "」です。");
+
     })
     .catch(err => {
-	alert("登録に失敗しました。システム担当者へ連絡してください。");
         console.error("通信エラー:", err);
     });
 }

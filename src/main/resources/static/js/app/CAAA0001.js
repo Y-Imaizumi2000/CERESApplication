@@ -53,34 +53,25 @@ function validatePassword(pass, errors) {
 // ---------------------------------------------
 // サーバー通信
 // ---------------------------------------------
-function sendLoginRequest(id, pass) {
-    fetch("/validLoginUser", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id, pass })
-    })
-        .then(res => res.json())
-        .then(result => {
-            if (!result.success) {
-                displayErrors(result.errors);
-                return;
-            }
+async function sendLoginRequest(id, pass) {
 
-            if (!result.validFlg) {
-                console.log("ログイン失敗");
-				const errors = [];
-                errors.push("ユーザーが存在しませんでした。");
-				displayErrors(errors);
-				return;
-            } else {
-                console.log("ログイン成功");
-                location.href = "/html/app/CAAD0001.html";
-            }
-
-        })
-        .catch(err => {
-            console.error("通信エラー:", err);
-        });
+    try {
+        const result = await ApiClient.post("/validLoginUser", { id, pass });
+        if (!result.success) {
+            displayErrors(result.errors);
+            return;
+        }
+        if (!result.validFlg) {
+            const errors = [];
+            errors.push("ユーザーが存在しませんでした。");
+            displayErrors(errors);
+            return;
+        }
+        console.log("ログイン成功");
+        location.href = "/html/app/CAAD0001.html";
+    } catch (err) {
+        console.error("通信エラー:", err);
+    }
 }
 
 
