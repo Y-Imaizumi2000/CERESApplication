@@ -3,9 +3,9 @@
 .first-view {
   height: calc(100vh - 110px);
   background-image: url(../../image/app/caad0001/bg-main.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
 }

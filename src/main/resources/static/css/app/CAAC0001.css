@@ -2,10 +2,12 @@
 
 .title {
   height: 310px;
+  /**
   background-image: url(../../image/app/caac0001/bg-main.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
+  */
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,7 +27,7 @@
   margin-top: 15px;
 }
 main {
-      background-image: url("../../image/app/caac0001/room2.jpg");
+      background-image: url("../../image/app/caac0001/fanart_back.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
