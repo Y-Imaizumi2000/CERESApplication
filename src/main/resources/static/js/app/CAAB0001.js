@@ -65,6 +65,7 @@ function regUserInfo(name, dob, telNo, pass) {
 
         console.log("登録成功");
         alert("登録が完了しました。お客さまのユーザーIDは「" + result.userId + "」です。");
+		location.href = "/html/app/CAAA0001.html";
 
     })
     .catch(err => {
