@@ -2,7 +2,7 @@
 
 .title {
   height: 310px;
-  background-image: url(../../image/app/caae0001/bg-main.jpg);
+  background-image: url("../../image/app/caae0001/whiteroom.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -75,23 +75,21 @@
   margin-top: 25px;
 }
 
-.movie {
+.inquiry {
   width: 930px;
   max-width: 90%;
-  background-color: #f8f8f8;
   padding: 50px 60px;
-  margin-top: 55px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.movie h2 {
+.inquiry h2 {
   font-size: 22px;
   font-weight: bold;
   text-align: center;
 }
 
-.movie h2::after {
+.inquiry h2::after {
   content: '';
   display: block;
   width: 36px;
@@ -102,21 +100,10 @@
   margin-right: auto;
 }
 
-.movie iframe {
-  display: block;
-  width: 100%;
-  height: 456px;
-  margin-top: 30px;
-}
-
-.movie p {
+.inquiry p {
   font-size: 15px;
   line-height: 28px;
   margin-top: 20px;
-}
-
-.footer {
-  margin-top: 100px;
 }
 
 @media (max-width: 800px) {
@@ -140,12 +127,61 @@
     margin-top: 25px;
   }
 
-  .movie {
+  .inquiry {
     width: 500px;
     padding: 30px 25px;
   }
-
-  .movie iframe {
-    height: 240px;
-  }
 }
+  .blue-link {
+    color: #007bff; /* 好きな青に変更OK */
+  }
+
+  main {
+        background-image: url("../../image/app/caae0001/marble.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+  }
+  .half {
+    opacity: 0.2;
+  }
+	.form-area {
+	  border: 1px solid #aaaaaa;
+	  margin-top: 25px;
+	  padding: 30px;
+	  display: flex;
+	  flex-wrap: wrap;
+	}
+
+	.form-area dt {
+	  width: 200px;
+	  padding: 15px 0;
+	  font-size: 15px;
+	  font-weight: bold;
+	  line-height: 24px;
+	}
+
+	.form-area dd {
+	  width: calc(100% - 200px);
+	  padding: 15px 0;
+	}
+
+  .submit-button {
+	/**
+    background-color: #f4dd64;
+	*/
+	background-image: url("../../image/app/caae0001/marble.jpg");
+    display: inline-block;
+    min-width: 180px;
+    line-height: 48px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+  }
+  .submit-button:hover {
+    background-color: #d8b500;
+  }
