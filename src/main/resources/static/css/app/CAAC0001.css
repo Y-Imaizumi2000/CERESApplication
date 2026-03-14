@@ -24,6 +24,12 @@
   font-size: 14px;
   margin-top: 15px;
 }
+main {
+      background-image: url("../../image/app/caac0001/room2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+}
 
 .item-list {
   width: 930px;
@@ -70,10 +76,12 @@
   transform-origin: top left;
   transform: rotate(90deg);
 }
+  video {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
-.footer {
-  margin-top: 100px;
-}
 
 @media (max-width: 800px) {
   .item-list {

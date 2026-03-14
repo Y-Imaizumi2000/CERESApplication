@@ -68,7 +68,7 @@ img {
 .footer {
   color: #ffffff;
   background-color: #24211b;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-bottom: 15px;
   display: flex;
   flex-direction: column;
@@ -78,24 +78,24 @@ img {
 .footer-logo {
   display: block;
   width: 235px;
-  margin-top: 90px;
+  margin-top: 20px;
 }
 
 .footer-tel {
   font-size: 26px;
   font-weight: bold;
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 .footer-time {
   font-size: 13px;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .copyright {
   font-size: 14px;
   font-weight: bold;
-  margin-top: 90px;
+  margin-top: 20px;
 }
 
 @media (max-width: 800px) {
