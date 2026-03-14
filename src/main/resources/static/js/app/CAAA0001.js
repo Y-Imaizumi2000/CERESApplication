@@ -68,7 +68,7 @@ async function sendLoginRequest(id, pass) {
             return;
         }
         console.log("ログイン成功");
-        location.href = "/html/app/CAAD0001.html";
+        location.href = "/html/app/CAAC0001.html";
     } catch (err) {
         console.error("通信エラー:", err);
     }
