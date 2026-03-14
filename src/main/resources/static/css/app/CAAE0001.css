@@ -149,7 +149,7 @@
 	  border: 1px solid #aaaaaa;
 	  margin-top: 25px;
 	  padding: 30px;
-	  display: flex;
+	  display: block;
 	  flex-wrap: wrap;
 	}
 
