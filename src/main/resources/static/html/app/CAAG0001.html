@@ -29,7 +29,7 @@
 						<li><a href="./CAAE0001.html">CONCEPT</a></li>
 						<li><a href="./CAAC0001.html">FAN ART</a></li>
 						<li><a href="./CAAF0001.html">INQUIRY</a></li>
-						<li><a href="./CAAG0001.html">ACCESS</a></li>
+						<li><a href="./CAAG0001.html">SCHEDULE</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -43,44 +43,25 @@
 			<h1>ACCESS</h1>
 			<p>アクセス・お問い合わせ</p>
 		</div>
-		<div class="map">
-			<h2>アクセスマップ</h2>
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.3936550277863!2d138.3161019!3d35.8638688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601c6987d64042f7%3A0xf6a5d71dff896602!2z5bCP5re15rKi6aeF!5e0!3m2!1sja!2sjp!4v1634704228582!5m2!1sja!2sjp"
-				style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		<div class="calendar">
+		  <div class="calendar-header">
+		    <button id="prev-month">&lt;</button>
+		    <span id="calendar-title"></span>
+		    <button id="next-month">&gt;</button>
+		  </div>
+		  <div class="calendar-grid">
+		    <div class="day-name">Sun</div>
+		    <div class="day-name">Mon</div>
+		    <div class="day-name">Tue</div>
+		    <div class="day-name">Wed</div>
+		    <div class="day-name">Thu</div>
+		    <div class="day-name">Fri</div>
+		    <div class="day-name">Sat</div>
+		    <div id="calendar-days"></div>
+
+		  </div>
 		</div>
-		<div class="contact">
-			<h2>お問い合わせフォーム</h2>
-			<form action="#">
-				<dl class="form-area">
-					<dt><span class="required">お名前</span></dt>
-					<dd><input class="input-text" type="text" name="name" required></dd>
-					<dt><span class="required">メールアドレス</span></dt>
-					<dd><input class="input-text" type="email" name="email" required></dd>
-					<dt>お電話番号</dt>
-					<dd><input class="input-text" type="tel" name="tel"></dd>
-					<dt>お問い合わせ種別</dt>
-					<dd>
-						<select class="select-box" name="genre">
-							<option value="ご予約について" selected>ご予約について</option>
-							<option value="メニューについて">メニューについて</option>
-							<option value="営業時間について">営業時間について</option>
-						</select>
-					</dd>
-					<dt>お客様について</dt>
-					<dd>
-						<label class="radio-button"><input type="radio" name="user-type" value="一般のお客様"
-								checked>一般のお客様</label>
-						<label class="radio-button"><input type="radio" name="user-type" value="お取引先様">お取引先様</label>
-						<label class="radio-button"><input type="radio" name="user-type" value="その他">その他</label>
-					</dd>
-					<dt><span class="required">お問い合わせ内容</span></dt>
-					<dd><textarea class="message" name="message" required></textarea></dd>
-				</dl>
-				<p class="confirm-text">ご入力内容をご確認の上、お間違いがなければ［Submit］ボタンを押してください。</p>
-				<button class="submit-button" type="submit">Submit</button>
-			</form>
-		</div>
+
 	</main>
 	<!-- mainここまで -->
 
@@ -91,7 +72,7 @@
 				<li><a href="./CAAE0001.html">CONCEPT</a></li>
 				<li><a href="./CAAC0001.html">FAN ART</a></li>
 				<li><a href="./CAAF0001.html">INQUIRY</a></li>
-				<li><a href="./CAAG0001.html">ACCESS</a></li>
+				<li><a href="./CAAG0001.html">SCHEDULE</a></li>
 			</ul>
 		</nav>
 		<a class="footer-logo" href="./CAAD0001.html">
@@ -103,6 +84,7 @@
 	</footer>
 	<!-- footerここまで -->
 
+	<script src="../../js/app/CAAG0001.js"></script>
 </body>
 
 </html>
