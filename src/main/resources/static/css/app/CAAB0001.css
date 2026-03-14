@@ -53,7 +53,7 @@
 	border: 1px solid #aaaaaa;
 	margin-top: 25px;
 	padding: 30px;
-	display: grid;
+	display: block;
 	grid-template-columns: 120px 1fr;
 	flex-direction: column;
 	justify-content: center;
@@ -67,7 +67,9 @@
 	align-items: center;
 	white-space: nowrap;
 	width: 140px;
-	margin-left: 120px;
+	margin-left: 10px;
+	margin-top: 25px;
+	margin-bottom: 5px;
 }
 
 .form-area dd {
