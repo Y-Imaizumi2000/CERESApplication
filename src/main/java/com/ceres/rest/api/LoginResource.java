@@ -43,6 +43,7 @@ import com.ceres.service.UserService;
 		//ログインユーザーの有効チェックを行う。
 		logger.info("■■■　userService.validLoginUser　開始　■■■");
 		boolean validFlg = userService.validLoginUser(id, pass, sysDate);
+		
 		logger.info("■■■　userService.validLoginUser　終了　■■■");
 		logger.info("■■■　loginValidLoginUser　終了　■■■");
 		return Map.of("success", true,"validFlg", validFlg);

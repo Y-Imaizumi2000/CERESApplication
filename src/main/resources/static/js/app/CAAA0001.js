@@ -67,6 +67,9 @@ async function sendLoginRequest(id, pass) {
             displayErrors(errors);
             return;
         }
+		// ログインIDを保存
+		sessionStorage.setItem("loginUserId", id);
+
         console.log("ログイン成功");
         location.href = "/html/app/CAAE0001.html";
     } catch (err) {

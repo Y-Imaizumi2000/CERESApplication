@@ -14,59 +14,34 @@ document.getElementById("regInquiryInfo").addEventListener("submit", handleSubmi
 function handleSubmit(e) {
     e.preventDefault();
 
-    const name   = document.querySelector('input[inquiryType="inquiryType"]').value.trim();
-    const pass = document.querySelector('input[message="message"]').value.trim();
+    const inquiryType   = document.querySelector('input[inquiryType="inquiryType"]').value.trim();
+    const message = document.querySelector('input[message="message"]').value.trim();
     const errors = [];
 
     clearErrorArea();
 
-    // --- クライアント側バリデーション ---
-    checkValid(name, pass, confirmPass, errors);
-
-    if (errors.length > 0) {
-        displayErrors(errors);
-        return;
-    }
-
-    // --- ユーザー情報の登録） ---
-    regUserInfo(name, dob, telNo, pass);
+    // --- 問い合わせ情報の登録） ---
+    regInquiryInfo(inquiryType, message);
 }
-
-
-// ---------------------------------------------
-// バリデーション
-// ---------------------------------------------
-function checkValid(name, pass, confirmPass, errors) {
-    if (pass !== confirmPass) {
-        errors.push("パスワードと確認用パスワードが一致しません。");
-    }
-}
-
 
 // ---------------------------------------------
 // サーバー通信
 // ---------------------------------------------
-function regUserInfo(name, dob, telNo, pass) {
-	ApiClient.post("/regUserInfo", {
-        name,
-        dob,
-        telNo,
-        pass
-    })
+function regInquiryInfo(inquiryType, message) {
+	ApiClient.post("/regInquiryInfo", {inquiryType, message})
     .then(result => {
-
         if (!result.success) {
             displayErrors(result.errors);
             return;
         }
 
         console.log("登録成功");
-        alert("登録が完了しました。お客さまのユーザーIDは「" + result.userId + "」です。");
-		location.href = "/html/app/CAAA0001.html";
+        alert("登録が完了しました。登録内容は一覧画面から確認できます。");
 
     })
     .catch(err => {
         console.error("通信エラー:", err);
+		alert("登録エラー。システム管理者へ連絡してください。");
     });
 }
 
